@@ -1,0 +1,201 @@
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+.wrapper-inner {
+  padding-left: 5px;
+}
+
+.form-group textarea {
+  resize: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.work {
+  height: 300px;
+  margin-bottom: 30px;
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  padding-top: 15px;
+  text-align: center;
+  border: 1px solid #fff;
+}
+
+.work img {
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.work:hover {
+  text-decoration: none;
+  color: black;
+  background-color: #EAEAEA;
+  border: 1px solid #D2CFCF;
+}
+
+.work:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar-inverse {
+  background-color: #111;
+  border: none;
+  /* height: 5%; */
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border: none;
+}
+
+.nav.navbar-nav.side-nav, body {
+  background-color: #404040;
+}
+
+.navbar-inverse .navbar-toggle {
+  border-color: #fff;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+  background-color: #111;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin-top: 50px;
+  background-color: #404040;
+  height: calc(100% - 50px);
+}
+
+#page-wrapper {
+  min-height: 100%;
+}
+
+#wrapper {
+  height: 100%;
+}
+
+.navbar-inverse .navbar-nav>li>a, .side-nav>li>ul>li>a {
+  color: #fff;
+}
+
+
+.side-nav li a:hover, .side-nav li a:focus {
+    outline: none;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #fff;
+}
+
+.error-alert {
+  margin: 2px 0 0 0;
+  padding: 5px;
+  float: left;
+  border-radius: 3px;
+}
+
+.all-images {
+  max-height: 200px;
+}
+
+.upload {
+  float: left;
+}
+
+.form-group {
+  overflow: hidden;
+}
+
+.this-image {
+  margin: 0 auto;
+}
+
+.update-name {
+  font-size: 18px;
+  padding-top: 34px;
+  margin-left: 20px;
+}
+
+.block-info {
+  padding: 15px;
+}
+
+.wysiwyg {
+  margin-bottom: 15px;
+}
+
+.wysiwyg .form-control {
+  height: auto;
+}
+
+.m40 {
+  margin-top: 40px;
+}
+
+input[type="text"].ng-valid, input[type="tel"].ng-valid, input[type="url"].ng-valid, input[type="email"].ng-valid, textarea.ng-valid {  
+  border: 1px solid green;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(128, 233, 102, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(128, 233, 102, 0.6);
+}
+
+input[type="text"].ng-invalid, input[type="tel"].ng-invalid, input[type="url"].ng-invalid, input[type="email"].ng-invalid, textarea.ng-invalid {  
+  border: 1px solid red;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(226, 58, 58, 0.6);;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(226, 58, 58, 0.6);;
+}
+
+hr {
+  margin-top: 0;
+}
+
+#textAngular-editableFix-010203040506070809 {
+  display: none;
+}
+
+#uploadFile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.label-file {
+  display: block;
+  float: left;
+  margin-right: 15px;
+}
+
+.btn-success {
+  margin-bottom: 20px;
+}
+
+.feed {
+  position: relative;
+}
+
+.time {
+  position: absolute;
+  top: 19px;
+  right: 40px;
+}
+
+.delete-feed {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: red;
+}

@@ -1,0 +1,523 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: 'OpenSansRegular';
+  src: url("../fonts/OpenSansRegular.eot");
+  src: url("../fonts/OpenSansRegular.eot") format("embedded-opentype"), url("../fonts/OpenSansRegular.woff2") format("woff2"), url("../fonts/OpenSansRegular.woff") format("woff"), url("../fonts/OpenSansRegular.ttf") format("truetype"), url("../fonts/OpenSansRegular.svg#OpenSansRegular") format("svg");
+}
+@font-face {
+  font-family: 'GoodVibesCyr';
+  src: url("../fonts/GoodVibesCyr.eot");
+  src: url("../fonts/GoodVibesCyr.eot") format("embedded-opentype"), url("../fonts/GoodVibesCyr.woff") format("woff"), url("../fonts/GoodVibesCyr.ttf") format("truetype"), url("../fonts/GoodVibesCyr.svg#GoodVibesCyr") format("svg");
+}
+body {
+  font: 14px "OpenSansRegular", Helvetica, Arial, sans-serif;
+  color: #fff;
+  background-image: url(../img/background-image.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
+  min-width: 300px;
+}
+
+.cont {
+  display: table-row;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.footer {
+  height: 40px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+.title {
+  font-family: 'GoodVibesCyr';
+  font-size: 37px;
+  font-weight: bold;
+  margin: 0;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.description-title {
+  font-size: 30px;
+  margin-top: 3px;
+  margin-left: 15px;
+  font-family: 'GoodVibesCyr';
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.navbar-brand {
+  padding-top: 7px;
+  margin-left: 0;
+}
+
+.navbar {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.33);
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.33);
+  height: 74px;
+  padding-top: 15px;
+  margin-bottom: 40px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #fff;
+  background-color: transparent;
+}
+
+.picture {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.popup-link {
+  outline: none !important;
+}
+
+.work {
+  margin-bottom: 30px;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.work p {
+  background-color: rgba(0, 0, 0, 0.33);
+  padding: 6px;
+  padding-left: 10px;
+  color: #fff;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.33);
+  border-top: 1px solid rgba(0, 0, 0, 0.33);
+  height: 30px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.author {
+  margin-left: 15px;
+}
+
+.pagination {
+  margin-top: 10px;
+  display: inline-block;
+  border-radius: 0;
+  border: none;
+}
+
+.pagination-first a, .pagination-last a {
+  color: #fff;
+  background: linear-gradient(#3a3a3a, #1a1a1a);
+  border: none;
+}
+
+.pagination-prev a, .pagination-next a {
+  font-weight: bold;
+}
+
+.pagination > li > a, .pagination > li > a, .pagination > li > span {
+  color: #fff;
+  background: linear-gradient(#3a3a3a, #1a1a1a);
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.pagination > li > a, .pagination > li > span {
+  border: none;
+}
+
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+  z-index: 3;
+  color: #fff;
+  cursor: default;
+  background: linear-gradient(#1a1a1a, #3a3a3a);
+  border-color: #337ab7;
+}
+
+.pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover {
+  color: #fff;
+  text-shadow: 0 0 1px #fff;
+}
+
+.author-img {
+  max-width: 100%;
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.53);
+}
+
+.photo-wrap {
+  text-align: right;
+}
+
+.about-text {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.43);
+}
+
+.contacts-bar, .callback-form {
+  background-color: rgba(0, 0, 0, 0.73);
+  padding: 20px;
+}
+
+.contacts-bar a {
+  text-decoration: none;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.33);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.contacts-bar i {
+  font-size: 18px;
+}
+
+.phone i {
+  position: relative;
+  top: 2px;
+  left: 1px;
+  margin-right: 7px;
+}
+
+.email i {
+  position: relative;
+  top: 1px;
+  margin-right: 6px;
+}
+
+.facebook i {
+  position: relative;
+  top: 1px;
+  left: 2px;
+  margin-right: 14px;
+}
+
+.skype i {
+  position: relative;
+  top: 1px;
+  left: 1px;
+  margin-right: 9px;
+}
+
+.mid-title {
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.33);
+  margin-bottom: 10px;
+}
+
+.email-input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.63);
+  background-color: transparent;
+  padding: 5px;
+  outline: none;
+  margin-bottom: 5px;
+}
+
+.callback-text {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.63);
+  background-color: transparent;
+  padding: 5px;
+  outline: none;
+  resize: none;
+}
+
+.wrapper-contacts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper-data {
+  height: 100vh;
+}
+
+.author-block {
+  height: calc(100vh - 250px);
+  width: 100%;
+  display: table;
+}
+
+.wrapp-author {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.wrapper-inputs {
+  display: table-cell;
+  vertical-align: middle;
+  z-index: 100;
+}
+
+.angular-google-map-container {
+  height: calc(100vh - 114px - 80px);
+  min-height: 400px;
+}
+
+.wrap {
+  position: relative;
+}
+
+.callback-text {
+  height: 130px;
+}
+
+.submit, .submit:active, .submit:visited, .submit:focus {
+  color: #fff;
+  background: linear-gradient(#3a3a3a, #1a1a1a);
+  border: none;
+  outline: none;
+  margin-top: 10px;
+}
+
+input[type="text"].ng-valid, input[type="tel"].ng-valid, input[type="url"].ng-valid, input[type="email"].ng-valid, textarea.ng-valid {
+  border: 1px solid green;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(128, 233, 102, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(128, 233, 102, 0.6);
+}
+
+input[type="email"].ng-invalid.ng-dirty, textarea.ng-invalid.ng-dirty {
+  border: 1px solid red;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(226, 58, 58, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(226, 58, 58, 0.6);
+}
+
+.symbols {
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+.reviews {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+}
+
+li.active a {
+  font-weight: bold;
+}
+
+.active {
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
+}
+
+.popup-front i {
+  position: relative;
+  top: 5px;
+  font-size: 60px;
+  color: #fff;
+  float: left;
+}
+
+.popup-front p {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.popup-front.error {
+  min-height: 50px;
+}
+
+.popup-front.error i {
+  float: none;
+}
+
+p.error-message {
+  font-size: 12px;
+}
+
+.fade {
+  position: relative;
+  height: 100%;
+  opacity: 1;
+}
+
+.fade.ng-leave {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.fade.ng-enter {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.fade.ng-enter {
+  opacity: 0;
+  position: absolute;
+  top: 114px;
+  left: 0;
+  right: 0;
+  height: 60%;
+}
+
+.fade.ng-enter-active {
+  opacity: 1;
+}
+
+.fade.ng-leave {
+  opacity: 1;
+}
+
+.fade.ng-leave-active {
+  opacity: 0;
+}
+
+.navbar-right {
+  margin-right: 0;
+}
+
+@media (max-width: 970px) {
+  .block {
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    position: relative;
+    top: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .callback-form {
+    margin-top: 15px;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .photo-wrap {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .contacts-bar, .callback-form {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+  }
+
+  .block {
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+
+  .pagination > li > a, .pagination > li > span {
+    padding: 5px 7px;
+  }
+}

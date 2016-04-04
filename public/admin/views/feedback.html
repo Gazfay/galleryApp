@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <h1>Обратная связь</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-6" ng-repeat="feed in feeds | filter: {page: bigCurrentPage}">
+      <div class="feed well">
+        <p><strong>От кого:</strong></p>
+        <p>{{feed.email}}</p>
+        <p class="time">{{feed.created_at | date}}</p>
+        <p><strong>Сообщение:</strong></p>
+        <p>{{feed.text}}</p>
+        <span class="glyphicon glyphicon-remove delete-feed" ng-click="showAlert(feed._id, feeds)"></span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <uib-pagination total-items="bigTotalItems" items-per-page="12" ng-model="bigCurrentPage" first-text="Первая" last-text="Последняя" next-text=">" ng-change="pageChanged()" previous-text="<" max-size="maxSize" class="pagination-md" boundary-links="true" force-ellipses="true"></uib-pagination>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Уведомление</h4>
+      </div>
+      <div class="modal-body">
+          Вы действительно хотите удалить?
+      </div>
+      <div class="modal-footer">
+        <button type="button" ng-click="deleteFeed(deleteId, feeds)" class="btn btn-danger">Удалить</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+      </div>
+    </div>
+  </div>
+</div>

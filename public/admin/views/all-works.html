@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <h1>Все работы</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-3 col-sm-4" ng-repeat="work in works | filter: {page: bigCurrentPage}">
+      <a href="all-works/{{work._id}}" class="work">
+        <img ng-src="{{'../uploads/' + work.file.filename}}" class="all-images" alt="">
+        <p>{{work.textName}}</p>
+        <span>{{work.textDescription}}</span>
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <uib-pagination total-items="bigTotalItems" items-per-page="12" ng-model="bigCurrentPage" first-text="Первая" last-text="Последняя" next-text=">" ng-change="pageChanged()" previous-text="<" max-size="maxSize" class="pagination-md" boundary-links="true" force-ellipses="true"></uib-pagination>
+    </div>
+  </div>
+</div>
+
