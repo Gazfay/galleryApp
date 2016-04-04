@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>
+          Главная информация
+      </h1>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-lg-6 col-md-8 col-lg-offset-3 col-md-offset-2">
+      <div class="wrapper-inner">
+        <form name="mainForm" ng-submit="submit()" novalidate>
+          <div class="form-group">
+            <label>Заголовок сайта</label>
+            <input class="form-control" name="nameHeader" type="text" ng-model="headerData.title" required>
+            <p class="help-block" ng-if="mainForm.nameHeader.$error.required">Введите заголовок сайта</p>
+          </div>
+          <div class="form-group">
+            <label>Краткое описание</label>
+            <textarea class="form-control" name="descriptionHeader" rows="3" ng-model="headerData.description" type="text"></textarea>
+          </div>
+          <button type="submit" class="btn btn-default btn-success" ng-disabled="mainForm.$invalid">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Ответ</h4>
+      </div>
+      <div class="modal-body">
+          Данные успешно сохранены.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Ответ</h4>
+      </div>
+      <div class="modal-body">
+          Ошибка!
+          {{error}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>

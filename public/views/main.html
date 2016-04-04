@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="block">
+      <div class="col-sm-6 col-md-3">
+        <div class="work" ng-repeat="work in works | filter: {columNum: 1, page: bigCurrentPage}">
+          <a class="popup-link" href="{{'../uploads/' + work.file.filename}}" data-source="{{'../uploads/' + work.file.filename}}"  title="{{work.textName + '<br><br>' + work.textDescription}}" popup>
+            <img class="picture" ng-src="{{'../uploads/' + work.file.filename}}"></img>
+          </a>
+          <p>{{work.textName}}</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="work" ng-repeat="work in works | filter: {columNum: 2, page: bigCurrentPage}">
+          <a class="popup-link" href="{{'../uploads/' + work.file.filename}}" data-source="{{'../uploads/' + work.file.filename}}"  title="{{work.textName + '<br><br>' + work.textDescription}}" popup>
+            <img class="picture" ng-src="{{'../uploads/' + work.file.filename}}"></img>
+          </a>
+          <p>{{work.textName}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="block">
+      <div class="col-sm-6 col-md-3">
+        <div class="work" ng-repeat="work in works | filter: {columNum: 3, page: bigCurrentPage} ">
+          <a class="popup-link" href="{{'../uploads/' + work.file.filename}}" data-source="{{'../uploads/' + work.file.filename}}"  title="{{work.textName + '<br><br>' + work.textDescription}}" popup>
+            <img class="picture" ng-src="{{'../uploads/' + work.file.filename}}"></img>
+          </a>
+          <p>{{work.textName}}</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="work" ng-repeat="work in works | filter: {columNum: 4, page: bigCurrentPage}">
+          <a class="popup-link" href="{{'../uploads/' + work.file.filename}}" data-source="{{'../uploads/' + work.file.filename}}"  title="{{work.textName + '<br><br>' + work.textDescription}}" popup>
+            <img class="picture" ng-src="{{'../uploads/' + work.file.filename}}"></img>
+          </a>
+          <p>{{work.textName}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <uib-pagination class="pagination" total-items="bigTotalItems" items-per-page="12" ng-model="bigCurrentPage" first-text="Первая" last-text="Последняя" next-text=">" ng-change="pageChanged()" previous-text="<" max-size="maxSize" class="pagination-md" boundary-links="true" force-ellipses="true"></uib-pagination>
+    </div>
+  </div>
+</div>

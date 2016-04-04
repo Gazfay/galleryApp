@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="wrap">
+    <ui-gmap-google-map center="map.center" zoom="map.zoom" options="options"></ui-gmap-google-map>
+    <div class="wrapper-contacts">
+      <div class="wrapper-inputs">
+        <div class="col-md-4 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+          <div class="contacts-bar">
+            <h2 class="mid-title">Контактные данные:</h2>
+            <a class="phone" href="tel:{{contacts.telephone}}"><i class="fa fa-phone"></i> {{contacts.telephone}}</a>
+            <a class="email" href="mailto:{{contacts.email}}"><i class="fa fa-envelope"></i> {{contacts.email}}</a>
+            <a class="facebook" href="{{contacts.facebook}}" target="_blank"><i class="fa fa-facebook"></i> Ivan Kharitonov</a>
+            <a class="skype" href="skype:{{contacts.skype}}?call"><i class="fa fa-skype"></i> {{contacts.skype}}</a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-sm-5"> 
+          <div class="callback-form">
+            <h2 class="mid-title">Обратная Связь</h2>
+            <form name="feedbackForm" id="callbackForm" ng-submit="submitCallback(data)" novalidate>
+              <input name="emailField" type="email" class="email-input" placeholder="Введите Ваш e-mail" required ng-model="data.email">
+              <textarea class="callback-text" placeholder="Введите Ваш текст" required ng-model="data.text" maxlength="300" textarea></textarea>
+              <p ng-if="length" class="pull-right symbols">Осталось символов: {{symbols}}</p>
+              <button type="submit pull-left" class="btn btn-default btn-success submit" ng-disabled="feedbackForm.$invalid">Отправить</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

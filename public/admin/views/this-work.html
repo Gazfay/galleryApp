@@ -1,0 +1,85 @@
+<div class="container-fluid">
+    <h1>Работа</h1>
+      <hr>
+      <div class="row">
+         <div class="col-lg-6 col-md-8 col-lg-offset-3 col-md-offset-2" >
+          <ol class="breadcrumb">
+            <li><a href="all-works">Все работы</a></li>
+            <li class="active">{{work._id}}</li>
+          </ol>
+          <div class="panel panel-default">
+           <div class="panel-heading"><img ng-src="{{'../uploads/' + work.file.filename}}" class="this-image" alt=""></div>
+           <div class="panel-body">
+             <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td>
+                    Название файла
+                  </td>
+                  <td>{{work.file.filename}}</td>
+                </tr>
+                <tr>
+                  <td>
+                    Название работы 
+                  </td>
+                  <td>{{work.textName}}</td>
+                </tr>
+                <tr>
+                  <td>
+                    Описание
+                  </td>
+                  <td>{{work.textDescription}}</td>
+                </tr>
+                <tr>
+                  <td>
+                    Тип файла
+                  </td>
+                  <td>{{work.file.mimetype}}</td>
+                </tr>
+                <tr>
+                  <td>
+                    Размер
+                  </td>
+                  <td>{{work.file.size/1024/1024 | number:2 }} Мбайт</td>
+                </tr>
+                <tr>
+                  <td>
+                    Время создания
+                  </td>
+                  <td>{{work.created_at | date}}</td>
+                </tr>
+                <tr>
+                  <td>
+                    Время редактирования
+                  </td>
+                  <td>{{work.updated_at | date}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="pull-right">
+              <a class="btn btn-primary" href="all-works/{{work._id}}/update-work" role="button">Редактировать</a>
+              <button class="btn btn-danger" ng-click="deleteModal()" role="button">Удалить</button>
+            </div>
+           </div>
+         </div>
+        </div>
+      </div>
+            <!-- Modal -->
+      <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="myModalLabel">Уведомление</h4>
+            </div>
+            <div class="modal-body">
+                Вы действительно хотите удалить <br> <b>{{work.file.filename}}</b>?
+            </div>
+            <div class="modal-footer">
+              <button type="button" ng-click="deleteWork(work._id)" class="btn btn-danger">Удалить</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
