@@ -1,6 +1,5 @@
-var mongoose = require('../libs/mongoose'),
-    Schema = mongoose.Schema,
-    getDate = require('../libs/getDate');
+var mongoose = require('../libs/mongoose');
+var Schema = mongoose.Schema;
 
 
 var schema = new Schema({

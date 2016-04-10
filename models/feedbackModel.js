@@ -1,6 +1,5 @@
-var mongoose = require('../libs/mongoose'),
-    Schema = mongoose.Schema,
-    getDate = require('../libs/getDate');
+var mongoose = require('../libs/mongoose');
+var Schema = mongoose.Schema;
 
 var schema = new Schema({
   updated_at: String,
@@ -10,7 +9,7 @@ var schema = new Schema({
 }, {collection : 'callbacksCollection'});
 
 schema.pre('save', function(next) {
-  this.created_at = getDate();
+  this.created_at = Date.now();
   next();
 });
 

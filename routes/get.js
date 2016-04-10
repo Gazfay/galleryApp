@@ -1,9 +1,7 @@
-var mongoose = require('./../libs/mongoose');
 var models = require('./../models');
 var express = require('express');
 var router = express.Router();
 var path = require('path');
-var http = require('http');
 
 router.get('/admin/*', function (req, res, next) {
   res.sendfile(path.resolve('./public/admin/index.html'));
@@ -32,6 +30,7 @@ router.get("/get-works", function (req, res) {
       throw err;
       res.send(err);
     } else {
+      console.log(doc);
       res.json(doc);
     }
   });
@@ -54,6 +53,7 @@ router.get("/get-author", function (req, res) {
       throw err;
       res.send(err);
     } else {
+      console.log(doc);
       res.json(doc);
     }
   })

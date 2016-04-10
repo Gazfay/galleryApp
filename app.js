@@ -3,13 +3,13 @@ var path = require('path');
 var http = require('http');
 var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
+var config = require('./config/config');
 var app = express();
-
 var get = require('./routes/get');
 var post = require('./routes/post');
 var del = require('./routes/delete');
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + config.staticPath));
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
 

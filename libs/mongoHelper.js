@@ -1,8 +1,7 @@
-var http = require('http');
-var mongoose = require('./../libs/mongoose');
 var models = require('./../models');
 var upload = require('./../libs/multer');
 var optimize = require('./../libs/tinify');
+var fs = require('fs');
 
 function mongoHelper() {
 
@@ -13,12 +12,10 @@ function mongoHelper() {
       if (err) {
         throw err;
         res.send(err);
-      } else {
-        console.log("saved");
-      }
+      } 
     });
     return true;
-  }
+  };
 
   this.createOrUpdate = function (req, res) {
     models.mainAdminsModel.find( function (err, doc) {
@@ -52,7 +49,7 @@ function mongoHelper() {
         throw err;
         res.send(err);
       } else {
-        this.create(models.allWorksModel, req, {
+        this.create(models.allWorksModel, req, res, {
           textName: req.body.textName,
           textDescription: req.body.textDescription,
           file: req.files.pictureFile[0]
@@ -79,11 +76,18 @@ function mongoHelper() {
         res.send("Done");
       }
     });
-  }
+  };
 
-  this.deleteFile = function () {
-    // body...
-  }
+  this.deleteFile = function (pathUploads, fileName, res) {
+    fs.unlink(pathUploads + fileName, function (err) {
+      if (err) {
+        throw err;
+        res.send(err);
+      } else {
+        res.send('deleted');
+      }
+    });
+  };
 };
 
 module.exports = new mongoHelper();

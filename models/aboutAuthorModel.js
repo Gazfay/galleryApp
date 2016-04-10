@@ -1,6 +1,5 @@
-var mongoose = require('../libs/mongoose'),
-    Schema = mongoose.Schema,
-    getDate = require('../libs/getDate');
+var mongoose = require('../libs/mongoose');
+var Schema = mongoose.Schema;
 
 var schema = new Schema({
   updated_at: String,
@@ -10,7 +9,7 @@ var schema = new Schema({
 }, {collection : 'aboutAuthorCollection'});
 
 schema.pre('save', function(next) {
-  var currentDate = getDate();
+  var currentDate = Date.now();
   this.updated_at = currentDate;
   if (!this.created_at){
     this.created_at = currentDate;
