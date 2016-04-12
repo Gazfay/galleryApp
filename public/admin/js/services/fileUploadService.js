@@ -1,5 +1,5 @@
 angular.module('adminApp').service("fileUploadService", ["$http", function ($http) {
-  this.uploadFileToUrl = function (uploadUrl, data) {
+  this.uploadFileToUrl = function (uploadUrl, data, scope) {
     console.log(data);
     var fd = new FormData();
     for (var key in data) {
@@ -13,6 +13,7 @@ angular.module('adminApp').service("fileUploadService", ["$http", function ($htt
       .success(function(response){
         console.log(response);
         $('#myModal').modal("show");
+        scope.open();
       })
       .error(function(response){
         console.log(response,'bad');
