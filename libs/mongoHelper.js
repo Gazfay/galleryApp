@@ -18,7 +18,7 @@ function mongoHelper() {
   };
 
   this.createOrUpdate = function (req, res) {
-    models.mainAdminsModel.find( function (err, doc) {
+    models.mainAdminModel.find( function (err, doc) {
       if (err) {
         throw err;
         res.send(err);

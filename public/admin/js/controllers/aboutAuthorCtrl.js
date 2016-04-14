@@ -1,4 +1,4 @@
- angular.module('adminApp').controller("aboutAuthorCtrl", ["$scope", "$http", "fileUploadService", function ($scope, $http, fileUploadService) {
+app.controller("aboutAuthorCtrl", ["$scope", "$http", "fileUploadService", function ($scope, $http, fileUploadService) {
   $scope.data = {};
   $scope.errorFile = {
     size: false,
@@ -13,7 +13,7 @@
   }).then(function successCallback(response) {
       $scope.data = response.data;
     }, function errorCallback(response) {
-      console.log("bad");
+      console.log(response.data);
   });
 
   file.bind("change", function() {
@@ -50,13 +50,12 @@
         url: '/about-author',
         data: $scope.data
       }).then(function successCallback(response) {
-          console.log("ok");
-          $('#myModal').modal("show");
+          $('#successModal').modal("show");
         }, function errorCallback(response) {
-          console.log("bad");
+          $scope.errorMessage = response.status + ' ' + response.statusText;
+          $scope.$emit('error', $scope.errorMessage);
       });
     }
     $scope.chooseFile = "Выберете фотографию";
   }
-  
 }]);

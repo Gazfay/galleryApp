@@ -1,4 +1,4 @@
-angular.module('adminApp').controller("contactsCtrl", ["$http", "$scope", function ($http, $scope) {
+app.controller("contactsCtrl", ["$http", "$scope", function ($http, $scope) {
   $scope.contacts = {};
 
   $http({
@@ -17,9 +17,10 @@ angular.module('adminApp').controller("contactsCtrl", ["$http", "$scope", functi
       url: '/set-contacts',
       data: contacts
     }).then(function successCallback(response) {
-        $('#myModal').modal("show");
+        $('#successModal').modal("show");
       }, function errorCallback(response) {
-        console.log("bad", response);
+        $scope.errorMessage = response.status + ' ' + response.statusText;
+        $scope.$emit('error', $scope.errorMessage);
     });
   }
 }]);

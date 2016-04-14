@@ -21,7 +21,7 @@
     <![endif]-->
     <base href="/admin/">
 </head>
-<body>
+<body ng-controller="adminCtrl">
     <div id="wrapper">
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -73,6 +73,40 @@
         </div>
 
     </div>
+
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Ответ</h4>
+          </div>
+          <div class="modal-body">
+              <i class="fa fa-check done" aria-hidden="true"></i><span>Данные успешно сохранены.</span>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Ответ</h4>
+          </div>
+          <div class="modal-body">
+              <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <span>Ошибка! {{error}}</span>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- /#wrapper -->
     
      <script src="js/angular-core/angular.min.js"></script>
@@ -85,6 +119,7 @@
      <script src="js/controllers/allWorksCtrl.js"></script>
      <script src="js/controllers/thisWorkCtrl.js"></script>
      <script src="js/controllers/updateWorkCtrl.js"></script>
+     <script src="js/controllers/adminCtrl.js"></script>
      <script src="js/controllers/aboutAuthorCtrl.js"></script>
      <script src="js/controllers/contactsCtrl.js"></script>
      <script src="js/controllers/feedbackCtrl.js"></script>
@@ -107,5 +142,4 @@
      <script src="js/plugins/morris/morris-data.js"></script>
 
 </body>
-
 </html>

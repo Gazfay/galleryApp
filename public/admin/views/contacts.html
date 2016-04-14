@@ -1,46 +1,29 @@
 <div class="container-fluid">
-    <h1>Контакты</h1>
-      <hr>
-      <div class="row">
-         <div class="col-lg-6 col-md-8 col-lg-offset-3 col-md-offset-2" >
-            <form name="contactsForm" ng-submit="sendContacts(contacts)" novalidate>
-              <div class="form-group">
-                <label>E-mail</label>
-                <input name="email" type="email" class="form-control" placeholder="Введите E-mail" required ng-model="contacts.email">
-                <p ng-show="contactsForm.email.$invalid" class="help-block">Неккоректный e-mail адрес</p>
-              </div>
-              <div class="form-group">
-                <label>Телефон</label>
-                <input name="tel" type="tel" class="form-control" placeholder="Введите телефон" ng-model="contacts.telephone">
-              </div>
-              <div class="form-group">
-                <label>Skype</label>
-                <input name="skype" type="tel" class="form-control" placeholder="Введите Skype" ng-model="contacts.skype">
-              </div>
-              <div class="form-group">
-                <label>Facebook</label>
-                <input name="facebook" type="url" class="form-control" placeholder="Введите Facebook адрес" ng-value="sdhsdfdj" ng-model="contacts.facebook">
-                <p ng-show="contactsForm.facebook.$invalid" class="help-block">Неккоректный url адрес ( должен начинаться с "http://")</p>
-              </div>
-              <button type="submit" class="btn btn-default btn-success submit" ng-disabled="contactsForm.$invalid">Отправить</button>
-            </form>
-         </div>
-      </div>
-            <!-- Modal -->
-      <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title" id="myModalLabel">Уведомление</h4>
+  <h1>Контакты</h1>
+    <hr>
+    <div class="row">
+       <div class="col-lg-6 col-md-8 col-lg-offset-3 col-md-offset-2" >
+          <form name="contactsForm" ng-submit="sendContacts(contacts)" novalidate>
+            <div class="form-group">
+              <label>E-mail</label>
+              <input name="email" type="email" class="form-control" placeholder="Введите E-mail" required ng-model="contacts.email">
+              <p ng-show="contactsForm.email.$invalid" class="help-block">Неккоректный e-mail адрес</p>
             </div>
-            <div class="modal-body">
-                Информация отправлена.
+            <div class="form-group">
+              <label>Телефон</label>
+              <input name="tel" type="tel" class="form-control" placeholder="Введите телефон" ng-model="contacts.telephone">
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">ОК</button>
+            <div class="form-group">
+              <label>Skype</label>
+              <input name="skype" type="tel" class="form-control" placeholder="Введите Skype" ng-model="contacts.skype">
             </div>
-          </div>
-        </div>
-      </div>
+            <div class="form-group">
+              <label>Facebook</label>
+              <input name="facebook" type="url" class="form-control" placeholder="Введите Facebook адрес" ng-value="sdhsdfdj" ng-model="contacts.facebook">
+              <p ng-show="contactsForm.facebook.$invalid" class="help-block">Неккоректный url адрес ( должен начинаться с "http://")</p>
+            </div>
+            <button type="submit" class="btn btn-default btn-success submit" ng-disabled="contactsForm.$invalid">Отправить</button>
+          </form>
+       </div>
+    </div>
 </div>

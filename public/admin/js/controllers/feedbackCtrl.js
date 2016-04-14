@@ -1,4 +1,4 @@
-angular.module('adminApp').controller("feedbackCtrl", ["$http", "$scope", "$localStorage", "$filter", function ($http, $scope, $localStorage, $filter) {
+app.controller("feedbackCtrl", ["$http", "$scope", "$localStorage", "$filter", function ($http, $scope, $localStorage, $filter) {
   $scope.$storage = $localStorage;
   $scope.feedsLength = 0;
   $scope.bigCurrentPage = 1;
@@ -45,12 +45,10 @@ angular.module('adminApp').controller("feedbackCtrl", ["$http", "$scope", "$loca
   $scope.showAlert = function (id, feeds) {
     $scope.deleteId = id;
     $scope.feeds = feeds;
-    console.log($scope.feeds);
     $('#myModal').modal("show");
   }
 
   $scope.deleteFeed = function (id, feeds) {
-
     $http({
       method: 'DELETE', 
       url: "/feedback/"+ id +""
@@ -64,9 +62,7 @@ angular.module('adminApp').controller("feedbackCtrl", ["$http", "$scope", "$loca
         });
         $('#myModal').modal("hide");
       }, function errorCallback(response) {
-        console.log('error');
+        console.log(response.data);
     });
-
   }
-
 }]);

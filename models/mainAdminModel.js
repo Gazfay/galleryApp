@@ -10,7 +10,7 @@ var schema = new Schema({
 }, {collection : 'mainAdminCollection'});
 
 schema.pre('save', function(next) {
-  var currentDate = getDate();
+  var currentDate = Date.now();
   this.updated_at = currentDate;
   if (!this.created_at){
     this.created_at = currentDate;

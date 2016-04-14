@@ -1,4 +1,4 @@
- angular.module('adminApp').controller("updateWorkCtrl", ["$scope", "$http", "fileUploadService", "$routeParams", function ($scope, $http, fileUploadService, $routeParams) {
+app.controller("updateWorkCtrl", ["$scope", "$http", "fileUploadService", "$routeParams", function ($scope, $http, fileUploadService, $routeParams) {
   $scope.data = {};
   $scope.id = $routeParams.workId;
   $scope.errorFile = {
@@ -6,7 +6,7 @@
     type: false
   }
   $scope.chooseFile = "Выберите файл";
-  var id = $routeParams;
+  // var id = $routeParams;
   var file = angular.element(document.querySelector('#uploadFile'));
 
   $http({
@@ -15,7 +15,7 @@
   }).then(function successCallback(response) {
       $scope.data = response.data;
     }, function errorCallback(response) {
-      console.log("bad");
+      console.log(response.data);
   });
 
   file.bind("change", function() {
@@ -39,7 +39,6 @@
     } else {
       return false;
     }
-    console.log(formValid + $scope.errorFile);
   }
 
   $scope.submitWork = function () {
@@ -52,10 +51,10 @@
         url: '/update-picture',
         data: $scope.data
       }).then(function successCallback(response) {
-          console.log("ok");
-          $('#myModal').modal("show");
+          $('#successModal').modal("show");
         }, function errorCallback(response) {
-          console.log("bad");
+          $scope.errorMessage = response.status + ' ' + response.statusText;
+          $scope.$emit('error', $scope.errorMessage);
       });
     }
     $scope.chooseFile = "Выберите файл";

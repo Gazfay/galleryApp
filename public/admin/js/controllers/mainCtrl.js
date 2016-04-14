@@ -1,4 +1,4 @@
-angular.module('adminApp').controller("mainCtrl", [ "$scope", "$http", function ($scope, $http) {
+app.controller("mainCtrl", [ "$scope", "$http", function ($scope, $http) {
   $http({
       method: 'GET',
       url: '/get-main'
@@ -20,9 +20,8 @@ angular.module('adminApp').controller("mainCtrl", [ "$scope", "$http", function 
     }).then(function successCallback(response) {
         $('#successModal').modal("show");
       }, function errorCallback(response) {
-        console.log(response.data);
-        $scope.error = response.status + ' ' + response.statusText;
-        $('#errorModal').modal("show");
+        $scope.errorMessage = response.status + ' ' + response.statusText;
+        $scope.$emit('error', $scope.errorMessage);
     });
   }
 }]);

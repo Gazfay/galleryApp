@@ -9,15 +9,11 @@ angular.module('adminApp').service("fileUploadService", ["$http", function ($htt
     $http.post(uploadUrl, fd, {
       transformRequest: angular.identity,
       headers: {'Content-Type': undefined }
-    })
-      .success(function(response){
-        console.log(response);
-        $('#myModal').modal("show");
-        scope.open();
-      })
-      .error(function(response){
-        console.log(response,'bad');
-      });
-    }
-    
+    }).success(function(response){
+        $('#successModal').modal("show");
+    }).error(function(response){
+        $scope.errorMessage = response.status + ' ' + response.statusText;
+        $scope.$emit('error', $scope.errorMessage);
+    });
+  }
 }]);

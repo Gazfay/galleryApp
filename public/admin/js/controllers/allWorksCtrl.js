@@ -1,4 +1,4 @@
-angular.module('adminApp').controller("allWorksCtrl", ["$http", "$scope", "$localStorage", "$filter", function ($http, $scope, $localStorage, $filter) {
+app.controller("allWorksCtrl", ["$http", "$scope", "$localStorage", "$filter", function ($http, $scope, $localStorage, $filter) {
   $scope.$storage = $localStorage;
   $scope.worksLength = 0;
   $scope.bigCurrentPage = 1;

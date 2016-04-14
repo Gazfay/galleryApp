@@ -1,4 +1,4 @@
- angular.module('adminApp').controller("addWorkCtrl", ["$scope", "$http", "fileUploadService", "$uibModal", function ($scope, $http, fileUploadService, $uibModal) {
+app.controller("addWorkCtrl", ["$scope", "$http", "fileUploadService", "$uibModal", function ($scope, $http, fileUploadService, $uibModal) {
   $scope.data = {};
   $scope.errorFile = {
     size: false,
@@ -37,26 +37,5 @@
     $scope.chooseFile = "Выберите файл";
     file.val(null);
   }
-
-  $scope.animationsEnabled = true;
-  $scope.open = function (size) {
-    var modalInstance = $uibModal.open({
-      animation: $scope.animationsEnabled,
-      templateUrl: '/app/public/admin/views/modals/modal-success.html',
-      controller: 'addWorkCtrl',
-      size: size,
-      resolve: {
-        items: function () {
-          return $scope.items;
-        }
-      }
-    });
-  
-    modalInstance.result.then(function (selectedItem) {
-      $scope.selected = selectedItem;
-    }, function () {
-      console.log("modal opened");
-    });
-  };
   
 }]);

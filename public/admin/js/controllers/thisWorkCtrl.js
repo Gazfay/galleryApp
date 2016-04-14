@@ -1,4 +1,4 @@
-angular.module('adminApp').controller("thisWorkCtrl", ["$http", "$scope", "$routeParams", "$location", function ($http, $scope, $routeParams, $location) {
+app.controller("thisWorkCtrl", ["$http", "$scope", "$routeParams", "$location", function ($http, $scope, $routeParams, $location) {
   $scope.id = $routeParams.workId;
   $scope.work = {}
 
@@ -9,11 +9,15 @@ angular.module('adminApp').controller("thisWorkCtrl", ["$http", "$scope", "$rout
       $scope.work = response.data;
       console.log(response);
     }, function errorCallback(response) {
-      console.log("bad");
+      console.log(response.data);
   });
 
+  $scope.deleteModal = function () {
+    $('#askModal').modal("show");
+  }
+
   $scope.deleteWork = function (id) {
-    $('#myModal').modal('hide');
+    $('#askModal').modal('hide');
       $http({
         method: 'DELETE',
         url: "/delete-work/"+ id +"",
@@ -23,8 +27,4 @@ angular.module('adminApp').controller("thisWorkCtrl", ["$http", "$scope", "$rout
           console.log("bad", response);
       });
    }
-
-  $scope.deleteModal = function () {
-    $('#myModal').modal("show");
-  }
 }]);

@@ -199,3 +199,19 @@ hr {
   font-size: 16px;
   color: red;
 }
+
+.modal-body i {
+  font-size: 30px;
+  color: #ca0000;
+}
+
+.modal-body span {
+  position: relative;
+  top: -5px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.modal-body .done {
+  color: green;
+}
