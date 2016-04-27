@@ -3,7 +3,6 @@ app.controller("mainCtrl", ['$scope', '$http', '$filter', '$localStorage', funct
     $scope.bigCurrentPage = 1;
     $scope.works = [];
 
-    console.log($scope.view);
     $http({
       method: 'GET', 
       url: '/get-works'
@@ -48,4 +47,16 @@ app.controller("mainCtrl", ['$scope', '$http', '$filter', '$localStorage', funct
     }, function errorCallback(response) {
         console.log(response);
   });
+
+  window.onload = function () {
+    FB.api(
+      "/1032776266805134",
+      function (response) {
+        if (response && !response.error) {
+          console.log(response);
+        }
+      }
+    );
+  }
+
 }]);

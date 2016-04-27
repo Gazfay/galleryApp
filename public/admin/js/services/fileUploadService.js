@@ -1,4 +1,4 @@
-angular.module('adminApp').service("fileUploadService", ["$http", function ($http) {
+app.service("fileUploadService", ["$http", function ($http) {
   this.uploadFileToUrl = function (uploadUrl, data, scope) {
     console.log(data);
     var fd = new FormData();
