@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="galleryApp" ng-cloak>
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Галерея Ивана Харитонова</title>
+  <base href="/">
   <link href="/admin/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="js/plugins/magnificPopup/magnificPopup.css">
@@ -10,8 +12,6 @@
   <link rel="stylesheet" href="css/ngDialog-theme-default.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico"/>
-  <title>Галерея Ивана Харитонова</title>
-  <base href="/">
 </head>
 <body ng-controller="galleryCtrl">
   <script src="js/plugins/facebookComments/facebook.js"></script> 
@@ -56,7 +56,17 @@
       <div ng-view ng-model="view"></div>
     </div>
     <footer class="footer">
-      <span>&copy; 2016 <span class="author">Ivan Kharitonov Gallery</span></span>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="login-modal" ng-click="loginModal()">
+              <i class="fa fa-sign-in" aria-hidden="true"></i>
+              <span class="login-text">Войти</span>
+            </div>
+            <div class="author">&copy; 2016 <span class="author">Ivan Kharitonov Gallery</span></div>
+          </div>
+        </div>
+      </div>
     </footer>
   </div>
   <script src="js/plugins/bootstrap/jquery.js"></script>

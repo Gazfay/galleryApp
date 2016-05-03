@@ -4,9 +4,14 @@ app.directive("popup", function () {
     restrict: 'A',
     link: function(scope, element, attrs) {
       element.magnificPopup({
+        delegate: '.popup-link',
+        preloader: true,
         type:'image',
         mainClass: 'mfp-with-zoom', 
         closeOnContentClick: true,
+         gallery:{
+          enabled:true
+        },
         zoom: {
           enabled: true, 
           duration: 300, 

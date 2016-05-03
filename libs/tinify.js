@@ -9,7 +9,6 @@ var optimize = function (filename) {
       height: 768
    });
    sourceFinish.toFile('./public/uploads/' + filename);
-   console.log('Picture Optimized');
 }
 
 module.exports = optimize;

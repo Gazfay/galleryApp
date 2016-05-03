@@ -441,8 +441,91 @@ p.error-message {
   margin-right: 0;
 }
 
-#fountainG{
-  position:relative;
+.login-modal {
+  float: left;
+  cursor: pointer;
+}
+
+.login-modal:hover {
+  text-shadow: 1px 1px 20px #fff;
+}
+
+.login-text {
+  margin-left: 3px;
+}
+
+.author {
+  float: right;
+}
+
+.popup-login {
+  width: 350px;
+  margin: 0 auto;
+}
+
+.admin-login, .admin-pass {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  padding: 5px;
+  outline: none;
+  background-color: transparent;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+
+
+#labelPass {
+  float: none;
+}
+
+.loginForm label {
+  float: left;
+  margin-right: 10px;
+  line-height: 33px;
+}
+
+.login-submit {
+  display: block;
+  cursor: pointer;
+  background-color: #111;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  line-height: 22px;
+  margin: 20px 0;
+  transition: all .5s;
+}
+
+.login-submit:hover {
+  background-color: #fff;
+  color: #111;
+}
+
+button[disabled]:hover, html input[disabled]:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.error-resp, .success-resp {
+  height: 20px;
+}
+
+.error-resp {
+  color: red;
+}
+
+.success-resp {
+  color: red;
+}
+
+
+#fountainG {
+  position: relative;
   width:234px;
   height:28px;
   margin:auto;

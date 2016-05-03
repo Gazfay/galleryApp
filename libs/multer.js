@@ -19,7 +19,14 @@ var fileFilter = function (req, file, cb) {
     }
 }
 
-var upload = multer({ storage : storage, fileFilter: fileFilter, limits: limits})
-                  .fields([{ name: "pictureFile", maxCount: 1 }]);
-                  
+var upload = multer({ 
+      storage : storage, 
+      fileFilter: fileFilter, 
+      limits: limits
+    })
+    .fields([{ 
+      name: "pictureFile", 
+      maxCount: 1 
+    }]);
+
 module.exports = upload;

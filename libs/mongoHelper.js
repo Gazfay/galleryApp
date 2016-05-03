@@ -9,12 +9,12 @@ function mongoHelper() {
     var data = new model(objectData);
 
     data.save(function (err, data, other) {
+      console.log('saved mongoHelper');
       if (err) {
         throw err;
         res.send(err);
       } 
     });
-    return true;
   };
 
   this.createOrUpdate = function (req, res) {
@@ -73,7 +73,7 @@ function mongoHelper() {
         throw err;
         res.send(err);
       } else {
-        res.send("Done");
+        res.send(200);
       }
     });
   };

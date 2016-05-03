@@ -1,9 +1,9 @@
 <div class="container">
-  <div class="row">
+  <div class="row" popup>
     <div class="block">
       <div class="col-sm-6 col-md-3">
         <div class="work" ng-repeat="work in works | filter: {columNum: 1, page: bigCurrentPage}">
-          <a class="popup-link" href="{{'../uploads/' + work.file.filename}}" data-source="{{'../uploads/' + work.file.filename}}"  title="{{work.textName + '<br><br>' + work.textDescription}}" popup>
+          <a class="popup-link" href="{{'../uploads/' + work.file.filename}}" data-source="{{'../uploads/' + work.file.filename}}"  title="{{work.textName + '<br><br>' + work.textDescription}}">
             <img class="picture" ng-src="{{'../uploads/' + work.file.filename}}"></img>
           </a>
           <p>{{work.textName}}</p>
@@ -11,7 +11,7 @@
       </div>
       <div class="col-sm-6 col-md-3">
         <div class="work" ng-repeat="work in works | filter: {columNum: 2, page: bigCurrentPage}">
-          <a class="popup-link" href="{{'../uploads/' + work.file.filename}}" data-source="{{'../uploads/' + work.file.filename}}"  title="{{work.textName + '<br><br>' + work.textDescription}}" popup>
+          <a class="popup-link" href="{{'../uploads/' + work.file.filename}}" data-source="{{'../uploads/' + work.file.filename}}"  title="{{work.textName + '<br><br>' + work.textDescription}}">
             <img class="picture" ng-src="{{'../uploads/' + work.file.filename}}"></img>
           </a>
           <p>{{work.textName}}</p>
@@ -21,7 +21,7 @@
     <div class="block">
       <div class="col-sm-6 col-md-3">
         <div class="work" ng-repeat="work in works | filter: {columNum: 3, page: bigCurrentPage} ">
-          <a class="popup-link" href="{{'../uploads/' + work.file.filename}}" data-source="{{'../uploads/' + work.file.filename}}"  title="{{work.textName + '<br><br>' + work.textDescription}}" popup>
+          <a class="popup-link" href="{{'../uploads/' + work.file.filename}}" data-source="{{'../uploads/' + work.file.filename}}"  title="{{work.textName + '<br><br>' + work.textDescription}}">
             <img class="picture" ng-src="{{'../uploads/' + work.file.filename}}"></img>
           </a>
           <p>{{work.textName}}</p>

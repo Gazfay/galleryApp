@@ -1,88 +1,18 @@
+var controllers = require('./../controllers');
+var auth = require('./../libs/auth');
 var models = require('./../models');
 var express = require('express');
 var router = express.Router();
-var path = require('path');
 
-router.get('/admin/*', function (req, res, next) {
-  res.sendfile(path.resolve('./public/admin/index.html'));
-});
-
-router.get('/get-main', function (req, res, next) {
-  models.mainAdminModel.findOne(function (err, page) {
-    if (err) {
-      throw err;
-      res.send(err);
-    } else {
-      if (page) {
-        var data = { 
-          title: page.title,
-          description: page.description
-        }
-        res.json(data);
-      }
-    }
-  });
-});
-
-router.get("/get-works", function (req, res) {
-  models.allWorksModel.find( function (err, doc) {
-    if (err) {
-      throw err;
-      res.send(err);
-    } else {
-      console.log(doc);
-      res.json(doc);
-    }
-  });
-});
-
-router.get("/get-work/:id", function (req, res) {
-  models.allWorksModel.findOne({_id: req.params.id}, function (err, doc) {
-    if (err) {
-      throw err;
-      res.send(err);
-    } else {
-      res.json(doc);
-    }
-  });
-});
-
-router.get("/get-author", function (req, res) {
-  models.aboutAuthorModel.findOne(function (err, doc) {
-    if (err) {
-      throw err;
-      res.send(err);
-    } else {
-      console.log(doc);
-      res.json(doc);
-    }
-  })
-});
-
-router.get("/get-contacts", function (req, res) {
-  models.contactsModel.findOne(function (err, doc) {
-    if (err) {
-      throw err;
-      res.send(err);
-    } else {
-      res.json(doc);
-    }
-  })
-});
-
-router.get('/feedback', function (req, res, next) {
-  models.feedbackModel.find( function (err, doc) {
-    if (err) {
-      throw err;
-      res.send(err);
-    } else {
-      res.json(doc);
-    }
-  });
-});
-
-router.get('/*', function (req, res, next) {
-  res.sendfile(path.resolve('./public/index.html'));
-});
+router.get('/admin/', auth, controllers.routeController.adminRoute);
+router.use(express.static('./public'));
+router.get('/admin/*', auth, controllers.routeController.adminRoute);
+router.get('/get-main', controllers.mainAdminController.getMain);
+router.get("/get-works", controllers.allWorksController.getWorks);
+router.get("/get-work/:id", controllers.allWorksController.getWork);
+router.get("/get-author", controllers.aboutAuthorController.getAuthor);
+router.get("/get-contacts", controllers.contactsController.getContacts);
+router.get('/feedback', controllers.feedbackController.getFeedback);
+router.get('/*', controllers.routeController.mainRoute);
 
 module.exports = router;

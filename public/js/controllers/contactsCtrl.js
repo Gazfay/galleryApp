@@ -10,17 +10,21 @@ app.controller("contactsCtrl", ['$scope', '$http', 'ngDialog', function ($scope,
       url: '/feedback',
       data: data
     }).then(function successCallback(response) {
-        ngDialog.open({ template: './views/popups/successContacts.html',
-                        className: 'ngdialog-theme-default',
-                        controller: 'contactsCtrl' });
+        ngDialog.open({ 
+          template: './views/popups/successContacts.html',
+          className: 'ngdialog-theme-default',
+          controller: 'contactsCtrl' 
+        });
         $scope.data.email = $scope.data.text = '';
       }, function errorCallback(response) {
-          ngDialog.open({ template: './views/popups/errorContacts.html',
-                          className: 'ngdialog-theme-default',
-                          controller: ['$scope', function($scope) {
-                            $scope.errorResponse = response;
-                          }] 
-                        });
+          ngDialog.open({ 
+            template: './views/popups/errorContacts.html',
+            className: 'ngdialog-theme-default',
+            controller: 
+              ['$scope', function($scope) {
+                $scope.errorResponse = response;
+             }] 
+          });
     });
   }
 

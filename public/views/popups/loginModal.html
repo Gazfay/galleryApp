@@ -1,0 +1,10 @@
+<div class="popup-front text-center popup-login" novalidate>
+  <form name="loginForm" ng-submit="submitAdmin(data)" class="loginForm">
+    <p ng-if="errorResponse" class="error-resp">Ошибка авторизации</p>
+    <label for="login">Логин:</label>
+    <input type="text" id="login" ng-model="data.login" class="admin-login" placeholder="Введите Ваш Логин" required>
+    <label for="pass">Пароль:</label>
+    <input type="password" id="pass" ng-model="data.pass" class="admin-pass" placeholder="Введите Ваш Пароль" required>
+    <input type="submit" class="login-submit" ng-disabled="loginForm.$invalid">
+  </form>
+</div>

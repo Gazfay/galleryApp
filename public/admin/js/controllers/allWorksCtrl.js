@@ -8,6 +8,7 @@ app.controller("allWorksCtrl", ["$http", "$scope", "$localStorage", "$filter", f
       method: 'GET', 
       url: '/get-works'
     }).then(function successCallback(response) {
+      console.log(response);
         $scope.worksArray =  $filter('orderBy')(response.data, "-created_at");
         $scope.countPage = 1;
 
