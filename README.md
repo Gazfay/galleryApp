@@ -1,2 +1,2 @@
 # galleryApp
-MEAN-stack (MongoDB, Express.js, Angular.js, Node.js ) aplication.
+MEAN-stack (MongoDB, Express.js, Angular.js, Node.js ) application.
