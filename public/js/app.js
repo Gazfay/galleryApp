@@ -1,4 +1,3 @@
-"use strict";
 var app = angular.module('galleryApp', ['ngRoute', 'ngStorage', 'ui.bootstrap', 'ngSanitize', 'uiGmapgoogle-maps', 'ngDialog', 'ngAnimate']);
 app.config(["$routeProvider", "$locationProvider", "$compileProvider",function ($routeProvider, $locationProvider, $compileProvider) {
   $locationProvider.html5Mode(true);
