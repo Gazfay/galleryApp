@@ -5,6 +5,6 @@ Live demo: https://galleryappedz.herokuapp.com
 
 Reworking сomercial project:
   - Used VK API for photo album.
-  - Used static info for site (deleted admin moudule)
+  - Used static info for site (deleted admin module)
   
 Live demo: http://ivan-kharitonov.hol.es
